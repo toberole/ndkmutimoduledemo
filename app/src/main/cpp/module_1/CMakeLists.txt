@@ -12,7 +12,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_AB
 # include_directories(./../include)
 
 ######################## 构建源文件 方案一 ########################
-# 获取当前目录下面的所有源文件 保存到 all_source 变量中
+# 获取 当前目录 下面的所有源文件 保存到 all_source 变量中
 file(GLOB all_source *.cpp *.c *.cc)
 
 ######################## 构建源文件 方案二 ########################
@@ -29,7 +29,7 @@ add_library( moudle_one
 
 ######################## 引入第三方库 ########################
 # 引入libs目录中第三方的libopencv_java.so库
-# add_library(lib_opencv
+# add_library(   lib_opencv
 #                SHARED
 #                IMPORTED)
 # set_target_properties(lib_opencv
