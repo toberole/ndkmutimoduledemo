@@ -17,10 +17,10 @@ cmake_minimum_required(VERSION 3.4.1)
 # 设置so输出位置
 # set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI})
 
-# 引入module_1模块下的CMakeLists
+# 引入module_1模块
 ADD_SUBDIRECTORY(src/main/cpp/module_1)
 
-# 引入module_2模块下的CMakeLists
+# 引入module_2模块
 # ADD_SUBDIRECTORY(src/main/cpp/module_2)
 
 

@@ -38,17 +38,20 @@ add_library( moudle_one
 
 
 
+# 查找库所在目录
+# 寻找log库 将库的路径保存在log_lib中
 find_library( # Sets the name of the path variable.
-              log-lib
+              log_lib
 
               # Specifies the name of the NDK library that
               # you want CMake to locate.
               log )
 
-
+# 指定生成目标库所需要 链接的库
+# 生成 moudle_one目标 需要链接 ${log-lib} 目录下面的库
 target_link_libraries( # Specifies the target library.
                        moudle_one
 
                        # Links the target library to the log library
                        # included in the NDK.
-                       ${log-lib} )
+                       ${log_lib} )
