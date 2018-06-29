@@ -10,35 +10,20 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-add_library( # Sets the name of the library.
-             native-lib
+################################### 公共配置 #############################
 
-             # Sets the library as a shared library.
-             SHARED
 
-             # Provides a relative path to your source file(s).
-             src/main/cpp/native-lib.cpp )
+################################### 多moudle配置 #############################
+# 设置so输出位置
+# set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI})
 
-# Searches for a specified prebuilt library and stores the path as a
-# variable. Because CMake includes system libraries in the search path by
-# default, you only need to specify the name of the public NDK library
-# you want to add. CMake verifies that the library exists before
-# completing its build.
+# 引入module_1模块下的CMakeLists
+ADD_SUBDIRECTORY(src/main/cpp/module_1)
 
-find_library( # Sets the name of the path variable.
-              log-lib
+# 引入module_2模块下的CMakeLists
+# ADD_SUBDIRECTORY(src/main/cpp/module_2)
 
-              # Specifies the name of the NDK library that
-              # you want CMake to locate.
-              log )
 
-# Specifies libraries CMake should link to your target library. You
-# can link multiple libraries, such as libraries you define in this
-# build script, prebuilt third-party libraries, or system libraries.
 
-target_link_libraries( # Specifies the target library.
-                       native-lib
 
-                       # Links the target library to the log library
-                       # included in the NDK.
-                       ${log-lib} )
+
